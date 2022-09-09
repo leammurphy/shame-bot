@@ -1,0 +1,4 @@
+.env
+__pycache__/
+cogs\__pycache__/
+Procfile
