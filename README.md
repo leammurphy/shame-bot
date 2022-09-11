@@ -1,5 +1,7 @@
 # shame-bot
 
+![shame-bot](https://user-images.githubusercontent.com/53125670/189510011-e43123a9-04cb-46f0-93df-59ee0e016487.jpeg)
+
 ## Description
 
 This project began as a simple music player and grew into what it is now. This bot was built for my friends and my personal use in our discord channel. This was also a great way to better learn python.
