@@ -1,5 +1,7 @@
 # shame-bot
 
+![shame-bot](https://user-images.githubusercontent.com/53125670/189510011-e43123a9-04cb-46f0-93df-59ee0e016487.jpeg)
+
 ## Description
 
 This project began as a simple music player and grew into what it is now. This bot was built for my friends and my personal use in our discord channel. This was also a great way to better learn python.
@@ -42,6 +44,10 @@ https://user-images.githubusercontent.com/53125670/189439367-05e102e5-5d5e-40c0-
     > Using a news api to return the top 5 headlines from the BBC. 
 
     #### **Demo**
+
+https://user-images.githubusercontent.com/53125670/189449003-1672e692-bc9c-4935-90df-f6fa4d66c9b8.mp4
+
+
 
 2. ### Subreddit Scraper
 
