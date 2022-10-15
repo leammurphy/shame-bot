@@ -145,7 +145,7 @@ async def dva(ctx):
     await ctx.send(embed = em)
     await ctx.message.delete()
 
-This was required for hosting on Heroku
+# This was required for hosting on Heroku
 async def load_extensions():
     for filename in os.listdir("cogs"):
         if filename.endswith(".py"):
