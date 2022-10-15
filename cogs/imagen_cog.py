@@ -22,9 +22,10 @@ class imagen_cog(commands.Cog):
         )
     def query(self, payload):
         answers = self.api_endpoint.generate(
-            prompt = payload
+            prompt = payload,
+            # seed = 34567,
+            # steps = 50,
         )
-
         for resp in answers:
             for artifact in resp.artifacts:
                 if artifact.finish_reason == generation.FILTER:
@@ -41,7 +42,6 @@ class imagen_cog(commands.Cog):
         query = " ".join(args)
         async with ctx.channel.typing():
           response = self.query(query)
-
         await ctx.reply(file=discord.File(response, 'cool_image.png'))
 
 async def setup(bot):
