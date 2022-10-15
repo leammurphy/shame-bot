@@ -145,17 +145,17 @@ async def dva(ctx):
     await ctx.send(embed = em)
     await ctx.message.delete()
 
-# This was required for hosting on Heroku
-# async def load_extensions():
-#     for filename in os.listdir("cogs"):
-#         if filename.endswith(".py"):
-#             # cut off the .py from the file name
-#             await bot.load_extension(f"cogs.{filename[:-3]}")
+This was required for hosting on Heroku
+async def load_extensions():
+    for filename in os.listdir("cogs"):
+        if filename.endswith(".py"):
+            # cut off the .py from the file name
+            await bot.load_extension(f"cogs.{filename[:-3]}")
 
-# async def main():
-#     async with bot:
-#         await load_extensions()
-#         await bot.start(getenv('TOKEN'))
+async def main():
+    async with bot:
+        await load_extensions()
+        await bot.start(getenv('TOKEN'))
 
-# asyncio.run(main())
-bot.run(getenv('TOKEN'))
+asyncio.run(main())
+# bot.run(getenv('TOKEN'))
