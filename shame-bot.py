@@ -164,16 +164,16 @@ async def gimme():
 async def on_ready():
     gimme.start()
 # This was required for hosting on Heroku
-# async def load_extensions():
-#     for filename in os.listdir("cogs"):
-#         if filename.endswith(".py"):
-#             # cut off the .py from the file name
-#             await bot.load_extension(f"cogs.{filename[:-3]}")
+async def load_extensions():
+    for filename in os.listdir("cogs"):
+        if filename.endswith(".py"):
+            # cut off the .py from the file name
+            await bot.load_extension(f"cogs.{filename[:-3]}")
 
-# async def main():
-#     async with bot:
-#         await load_extensions()
-#         await bot.start(getenv('TOKEN'))
+async def main():
+    async with bot:
+        await load_extensions()
+        await bot.start(getenv('TOKEN'))
 
-# asyncio.run(main())
-bot.run(getenv('TOKEN'))
+asyncio.run(main())
+# bot.run(getenv('TOKEN'))
