@@ -9,6 +9,8 @@ from bs4 import BeautifulSoup
 import os
 from os import getenv
 import helpers
+import datetime
+from discord.ext import tasks
 
 from cogs.music_cog import music_cog
 from cogs.speech_cog import speech_cog
@@ -145,17 +147,33 @@ async def dva(ctx):
     await ctx.send(embed = em)
     await ctx.message.delete()
 
+@bot.command()
+async def date(ctx):
+    today = datetime.date.today()
+    # print(today)
+    await ctx.send(today)
+    await ctx.message.delete()
+    # 1017667556871512134
+
+@tasks.loop(hours=18.0)
+async def gimme():
+    today = datetime.date.today()
+    channel = bot.get_channel(914709454929416254)
+    await channel.send(today)
+@bot.event
+async def on_ready():
+    gimme.start()
 # This was required for hosting on Heroku
-async def load_extensions():
-    for filename in os.listdir("cogs"):
-        if filename.endswith(".py"):
-            # cut off the .py from the file name
-            await bot.load_extension(f"cogs.{filename[:-3]}")
+# async def load_extensions():
+#     for filename in os.listdir("cogs"):
+#         if filename.endswith(".py"):
+#             # cut off the .py from the file name
+#             await bot.load_extension(f"cogs.{filename[:-3]}")
 
-async def main():
-    async with bot:
-        await load_extensions()
-        await bot.start(getenv('TOKEN'))
+# async def main():
+#     async with bot:
+#         await load_extensions()
+#         await bot.start(getenv('TOKEN'))
 
-asyncio.run(main())
-# bot.run(getenv('TOKEN'))
+# asyncio.run(main())
+bot.run(getenv('TOKEN'))
