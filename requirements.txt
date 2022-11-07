@@ -5,3 +5,4 @@ python-dotenv==0.21.0
 requests==2.27.1
 stability_sdk==0.2.6
 youtube_dl==2021.12.17
+openai
