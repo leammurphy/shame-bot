@@ -16,6 +16,7 @@ from cogs.music_cog import music_cog
 from cogs.speech_cog import speech_cog
 from cogs.imagen_cog import imagen_cog
 from cogs.reddit_cog import reddit_cog
+from cogs.openai_cog import openai_cog
 
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix="//", intents=intents)
@@ -25,6 +26,8 @@ bot.add_cog(music_cog(bot))
 bot.add_cog(speech_cog('DialoGPT-medium-Zuko'))
 bot.add_cog(imagen_cog(bot))
 bot.add_cog(reddit_cog(bot))
+bot.add_cog(openai_cog(bot))
+
 
 load_dotenv()
 
