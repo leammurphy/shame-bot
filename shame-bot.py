@@ -161,7 +161,7 @@ async def date(ctx):
 @tasks.loop(hours=24.0)
 async def gimme():
     today = datetime.date.today()
-    channel = bot.get_channel(914709454929416254)
+    channel = bot.get_channel()
     await channel.send(today)
 @bot.event
 async def on_ready():
